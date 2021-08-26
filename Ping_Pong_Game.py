@@ -68,3 +68,27 @@ def pedal2_go_up():
 def pedal2_go_down():
     pedal2.sety(pedal2.ycor()-20)
 
+
+
+
+canvas.listen()
+canvas.onkeypress(pedal_go_up,"Up")
+canvas.onkeypress(pedal_go_down,"Down")
+canvas.onkeypress(pedal2_go_up,"w")
+canvas.onkeypress(pedal2_go_down,"s")
+
+speedx = 2
+speedy = 2
+while True:
+    ball.setx(ball.xcor()+speedx)
+    ball.sety(ball.ycor()+speedy)
+
+    if ball.ycor()>300:
+        speedy = speedy*-1
+
+    elif ball.ycor()<-300:
+        speedy = speedy*-1
+
+        ''' make 2 more conditions for x limits and keep track of scores
+        >everytime the ball should start from 0,0 
+        >and change speed x to speedx*-1'''
