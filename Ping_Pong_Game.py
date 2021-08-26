@@ -92,3 +92,29 @@ while True:
         ''' make 2 more conditions for x limits and keep track of scores
         >everytime the ball should start from 0,0 
         >and change speed x to speedx*-1'''
+  if ball.xcor()>400:
+        ball.goto(0,0)
+        speedx = speedx*-1
+        pointa=pointa+1
+        score.clear()
+        score.write("Player A: {}   Player B: {}".format(pointa,pointb),font=('arial',24,'bold'))
+
+    elif ball.xcor()<-400:
+        ball.goto(0,0)
+        speedx = speedx*-1
+        pointb=pointb+1
+        score.clear()
+        score.write("Player A: {}   Player B: {}".format(pointa,pointb),font=('arial',24,'bold'))
+
+
+
+
+    if ball.xcor()>370 and (pedal.ycor()+50> ball.ycor() > pedal.ycor()-50):
+        speedx*=-1
+        playsound.playsound('bounce.wav')
+    elif ball.xcor()<-370 and (pedal2.ycor()+50>ball.ycor() > pedal2.ycor()-50):
+        speedx*=-1
+        playsound.playsound('bounce.wav')
+
+
+turtle.done()
